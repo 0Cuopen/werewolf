@@ -1,0 +1,12 @@
+<%= form_with model: [@game, @game_setting], local: true do |f| %>
+  <%= f.hidden_field :game_id, value: @game.id %>
+  <div>
+    <%= f.label :人狼の数 %>
+    <%= f.number_field :werewolf_count %>
+  </div>
+  <div>
+    <%= f.label :市民の数 %>
+    <%= f.number_field :citizen_count %>
+  </div>
+  <%= f.submit %>
+<% end %>

@@ -1,0 +1,14 @@
+<% @players.each do |player| %>
+  <%= player.name %>
+<% end %>
+
+<%= form_with model: [@room, @player], local: true do |f| %>
+  <%= f.hidden_field :room_id, value: @room.id %>
+  <%= f.text_field :name %>
+  <%= f.submit %>
+<% end %>
+
+<%= form_with model: @game, local: true do |f| %>
+  <%= f.hidden_field :room_id, value: @room.id %>
+  <%= f.submit 'ゲームを始める' %>
+<% end %>
